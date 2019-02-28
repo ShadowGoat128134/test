@@ -9,10 +9,22 @@
 	<style?
 </head>
 <body>
-<cancas id="trash" width="480" height="320></canvas>
-
+<canvas id="trash" width="480" height="320></canvas>
+<form action="/action_page.php">
+  Password:<br>
+  <input type="text" name="PassField" value="">
+  <br>
+  <input type="submit" value="Submit">
+</form> 
 <script>
-
+function myFunction() {
+  var x = document.getElementById("trash");
+  if (getText("Passfield") == 128134){
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>
 
 </body>
