@@ -9,23 +9,31 @@
 	</style>
 </head>
 <body>
-<canvas id="trash" width="480" height="320"></canvas>
-<form action="/action_page.php">
-  Password:<br>
-  <input type="text" name="PassField" value="">
-  <br>
-  <input type="submit" value="Submit">
-</form> 
+<canvas id="myCanvas" width="480" height="320"></canvas>
 <script>
-function myFunction() {
-  var x = document.getElementById("trash");
-  if (getText("Passfield") == 128134){
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var x = canvas.width/2;
+var y = canvas.height-30;
+var dx = 2;
+var dy = -2;
 
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    x += dx;
+    y += dy;
+}
+
+setInterval(draw, 10);
+</script>
 </body>
 </html>
