@@ -143,12 +143,10 @@ function draw() {
             dy = -dy  ;
 			 }
         }
-        else if(y + dy < ballRadius){
-	if (lives == 0){
+        else {
             alert("GAME OVER");
             document.location.reload();
             clearInterval(interval); // Needed for Chrome to end game
-	}
         }
     }
     
