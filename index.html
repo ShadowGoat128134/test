@@ -9,22 +9,23 @@
 	</style>
 </head>
 <body>
-<canvas id="myCanvas" width="480" height="320"></canvas>
-<script>var canvas = document.getElementById("myCanvas");
+<canvas id="myCanvas" width="960" height="640"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
+var dx = 3;
+var dy = -3;
 var paddleHeight = 10;
 var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 3;
+var brickRowCount = 10;
+var brickColumnCount = 8;
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -151,6 +152,7 @@ function draw() {
     }
     else {
       lives--;
+	alert("You lost a life.")
       if(!lives) {
         alert("GAME OVER");
         document.location.reload();
