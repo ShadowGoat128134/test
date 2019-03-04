@@ -5,13 +5,14 @@
 	<title>2D Breakout</title>
 	<style>
 		* { padding: 0; margin: 0; }
-		canvas { background: #eee; display: block; margon: 0 auto; }
+		canvas { background: #eee; display: block; margin: 0 auto; }
 	</style>
 </head>
 <body>
 <canvas id="myCanvas" width="960" height="640"></canvas>
 <script>
 var validation = prompt("Difficulty?", "Determines Ball Speed");
+var resetspeed = validation
 var canvas = document.getElementById("myCanvas");
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
@@ -162,8 +163,8 @@ function draw() {
         x = canvas.width/2;
         y = canvas.height-30;
         paddleX = (canvas.width-paddleWidth)/2;
-	dx = (validation);
-	dy= -(validation);
+	dx = resetspeed;
+	dy = -resetspeed;
       }
     }
   }
