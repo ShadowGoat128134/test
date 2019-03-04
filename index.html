@@ -153,6 +153,8 @@ function draw() {
     }
     else {
       lives--;
+	dy = -dy;
+	setTimeout(10);
 	alert("You lost a life.")
       if(!lives) {
         alert("GAME OVER");
@@ -162,7 +164,6 @@ function draw() {
         x = canvas.width/2;
         y = canvas.height-30;
         paddleX = (canvas.width-paddleWidth)/2;
-	dy = validation;
       }
     }
   }
