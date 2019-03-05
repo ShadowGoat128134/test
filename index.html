@@ -15,7 +15,7 @@ var validation = prompt("Difficulty?", "Determines Ball Speed");
 var canvas = document.getElementById("myCanvas");
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var ballRadius = 10;
+var ballRadius = promt("Ball size?", "Determines Ball Radius");
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = validation;
@@ -148,7 +148,7 @@ function draw() {
     dy = -dy;
   }
   else if(y + dy > canvas.height-ballRadius) {
-    if(x > paddleX - 3 && x < paddleX + paddleWidth + 3) {
+    if(x > paddleX - ballRadius && x < paddleX + paddleWidth + ballRadius) {
       dy = -dy;
     }
     else {
@@ -161,9 +161,8 @@ function draw() {
         document.location.reload();
       }
       else {
-        x = canvas.width/2;
+        x = paddleX;
         y = canvas.height-30;
-        paddleX = (canvas.width-paddleWidth)/2;
       }
     }
   }
@@ -184,3 +183,5 @@ draw();
 </script>
 </body>
 </html>
+
+
